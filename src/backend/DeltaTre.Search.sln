@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaTre.Search.Domain", "DeltaTre.Search.Domain\DeltaTre.Search.Domain.csproj", "{C0A9AF72-0972-47FC-9336-94D351FC45A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaTre.Search.Infrastructure", "DeltaTre.Search.Infrastructure\DeltaTre.Search.Infrastructure.csproj", "{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaTre.Search.Application", "DeltaTre.Search.Application\DeltaTre.Search.Application.csproj", "{963640C1-6950-4499-94F3-67C7E493DB01}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3A0BC07D-870A-44DD-A24B-045F8315A925}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution-items", ".solution-items", "{3676A3F3-E804-4574-9FF2-B19845CD42FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaTre.Search.Presentation.Rpc", "DeltaTre.Search.Presentation.Rpc\DeltaTre.Search.Presentation.Rpc.csproj", "{0858BB73-1AFA-435E-B623-718FC3EED22E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F5683168-2300-4920-9F65-C5FB30866CF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaTre.Search.Domain.Tests", "Tests\DeltaTre.Search.Domain.Tests\DeltaTre.Search.Domain.Tests.csproj", "{B493E5B0-836D-422E-A1A9-15BBF24E9B92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaTre.Search.Application.Tests", "Tests\DeltaTre.Search.Application.Tests\DeltaTre.Search.Application.Tests.csproj", "{DCF0EFCD-3E48-476A-9FAC-6E99CDC304AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaTre.Search.Tests.Common", "Tests\DeltaTre.Search.Tests.Common\DeltaTre.Search.Tests.Common.csproj", "{A28976F4-B171-4186-AC28-0DCD9E11D94A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaTre.Search.Infrastructure.Tests", "Tests\DeltaTre.Search.Infrastructure.Tests\DeltaTre.Search.Infrastructure.Tests.csproj", "{6C6BAA70-6CA0-4890-82D9-EBFED9E20DE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A9AF72-0972-47FC-9336-94D351FC45A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45453B35-4ADB-4B19-93A6-72FA11EEA7CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{963640C1-6950-4499-94F3-67C7E493DB01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0BC07D-870A-44DD-A24B-045F8315A925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0BC07D-870A-44DD-A24B-045F8315A925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0BC07D-870A-44DD-A24B-045F8315A925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0BC07D-870A-44DD-A24B-045F8315A925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0858BB73-1AFA-435E-B623-718FC3EED22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0858BB73-1AFA-435E-B623-718FC3EED22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0858BB73-1AFA-435E-B623-718FC3EED22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0858BB73-1AFA-435E-B623-718FC3EED22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B493E5B0-836D-422E-A1A9-15BBF24E9B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B493E5B0-836D-422E-A1A9-15BBF24E9B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B493E5B0-836D-422E-A1A9-15BBF24E9B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B493E5B0-836D-422E-A1A9-15BBF24E9B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF0EFCD-3E48-476A-9FAC-6E99CDC304AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF0EFCD-3E48-476A-9FAC-6E99CDC304AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF0EFCD-3E48-476A-9FAC-6E99CDC304AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF0EFCD-3E48-476A-9FAC-6E99CDC304AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28976F4-B171-4186-AC28-0DCD9E11D94A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28976F4-B171-4186-AC28-0DCD9E11D94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28976F4-B171-4186-AC28-0DCD9E11D94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28976F4-B171-4186-AC28-0DCD9E11D94A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C6BAA70-6CA0-4890-82D9-EBFED9E20DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C6BAA70-6CA0-4890-82D9-EBFED9E20DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C6BAA70-6CA0-4890-82D9-EBFED9E20DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C6BAA70-6CA0-4890-82D9-EBFED9E20DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A0BC07D-870A-44DD-A24B-045F8315A925} = {3676A3F3-E804-4574-9FF2-B19845CD42FD}
+		{B493E5B0-836D-422E-A1A9-15BBF24E9B92} = {F5683168-2300-4920-9F65-C5FB30866CF2}
+		{DCF0EFCD-3E48-476A-9FAC-6E99CDC304AC} = {F5683168-2300-4920-9F65-C5FB30866CF2}
+		{A28976F4-B171-4186-AC28-0DCD9E11D94A} = {F5683168-2300-4920-9F65-C5FB30866CF2}
+		{6C6BAA70-6CA0-4890-82D9-EBFED9E20DE2} = {F5683168-2300-4920-9F65-C5FB30866CF2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A15C6A03-6431-4C50-A248-7E836B75F0BC}
+	EndGlobalSection
+EndGlobal

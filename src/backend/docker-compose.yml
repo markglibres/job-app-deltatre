@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  deltaTre.search.presentation.rpc:
+    image: ${DOCKER_REGISTRY-}deltatre.grpc
+    build:
+      context: .
+      dockerfile: DeltaTre.Search.Presentation.Rpc/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

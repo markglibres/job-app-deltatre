@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  deltaTre.search.presentation.rpc:
+    image: ${DOCKER_REGISTRY-}deltatre.grpc
+    build:
+      context: ./backend
+      dockerfile: DeltaTre.Search.Presentation.Rpc/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - GRPC_VERBOSITY=debug
+      - NO_PROXY=localhost
+
+  deltaTre.presentation.api:
+    image: ${DOCKER_REGISTRY-}deltatre.api
+    build:
+      context: ./frontend
+      dockerfile: DeltaTre.Presentation.Api/Dockerfile
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - GRPC_VERBOSITY=debug
+    depends_on:
+      - deltaTre.search.presentation.rpc

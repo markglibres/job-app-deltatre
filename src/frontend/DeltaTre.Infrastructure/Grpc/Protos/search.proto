@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "DeltaTre.Search.Presentation.Rpc";
+
+package search;
+
+service Searcher {
+	rpc Find(SearchRequest) returns (SearchResponse);
+}
+
+message SearchRequest {
+	string word = 1;
+}
+
+message SearchResponse {
+	string word = 1;
+	bool found = 2;
+}
