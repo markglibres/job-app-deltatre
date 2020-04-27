@@ -40,6 +40,9 @@ namespace DeltaTre.Search.Domain.Words
             word.WasSearched();
             await _domainEventsService.Publish(word.Events, CancellationToken.None);
 
+            // because this stays in memory, let's clear events manually..
+            // in the real world, events will be ignored saving to datastore
+            word.ClearEvents();
             return true;
 
         }
@@ -104,6 +107,15 @@ namespace DeltaTre.Search.Domain.Words
 
             _logger.LogInformation($"Word {value} has been created.");
             return word;
+        }
+
+        public async Task<IEnumerable<Word>> GetTopSearched(int limit)
+        {
+            _logger.LogInformation($"Retrieving top {limit} searched words");
+            var results = await _wordRepository
+                .GetAsync(c => c.OrderByDescending(w => w.Count).Take(limit));
+
+            return results;
         }
     }
 }

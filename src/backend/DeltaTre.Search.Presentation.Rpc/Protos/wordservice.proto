@@ -7,6 +7,7 @@ package wordservice;
 service WordService {
 	rpc Find(SearchRequest) returns (SearchResponse);
 	rpc Update(UpdateRequest) returns (UpdateResponse);
+	rpc GetTopWords(GetTopRequests) returns (GetTopResponse);
 }
 
 message SearchRequest {
@@ -24,4 +25,17 @@ message UpdateRequest {
 
 message UpdateResponse {
 	bool success = 1;
+}
+
+message GetTopRequests {
+	int32 top = 1;
+}
+
+message GetTopResponse {
+	repeated .wordservice.WordInfo results = 1; 
+}
+
+message WordInfo {
+	string value = 1;
+	int32 count =  2;
 }

@@ -12,5 +12,6 @@ namespace DeltaTre.Search.Domain.Words.Seedwork
         Task Create(IEnumerable<string> words);
 
         Task<Word> Create(string word);
+        Task<IEnumerable<Word>> GetTopSearched(int limit);
     }
 }

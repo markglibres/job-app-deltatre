@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using DeltaTre.Application.Words;
 using DeltaTre.Search.Presentation.Rpc;
 using Microsoft.Extensions.Logging;
+using WordInfo = DeltaTre.Application.Words.WordInfo;
 
 namespace DeltaTre.Infrastructure.Grpc
 {
@@ -42,6 +43,26 @@ namespace DeltaTre.Infrastructure.Grpc
 
             var reply = await _wordServiceClient.UpdateAsync(request);
             return reply.Success;
+        }
+
+        public async Task<IEnumerable<WordInfo>> GetTopSearched(int limit)
+        {
+            _logger.LogInformation($"retrievig top {limit} searched words");
+
+            var request = new GetTopRequests
+            {
+                Top = limit
+            };
+
+            var reply = await _wordServiceClient.GetTopWordsAsync(request);
+
+            var response = reply.Results.Select(r => new WordInfo
+            {
+                Count = r.Count,
+                Value = r.Value
+            });
+
+            return response;
         }
     }
 }

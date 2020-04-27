@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using DeltaTre.Search.Application.CreateWords;
+using DeltaTre.Search.Application.GetTopSearched;
 using DeltaTre.Search.Application.SearchWord;
 using Grpc.Core;
 using MediatR;
@@ -54,6 +55,26 @@ namespace DeltaTre.Search.Presentation.Rpc.Services
             {
                 Success = response.Success
             };
+        }
+
+        public override async Task<GetTopResponse> GetTopWords(GetTopRequests request, ServerCallContext context)
+        {
+            _logger.LogInformation("getting top searched words...");
+
+            var query = new GetTopSearchedQuery
+            {
+                Limit = request.Top
+            };
+
+            var response = await _mediator.Send(query);
+
+            var reply = new GetTopResponse();
+            reply.Results.AddRange(response
+                .Results
+                .ToList()
+                .Select(r => new WordInfo {Count = r.Count, Value = r.Word}));
+
+            return reply;
         }
     }
 }

@@ -45,13 +45,20 @@ namespace DeltaTre.Search.Infrastructure.Repositories
 
         public Task<Word> GetByAsync(Expression<Func<Word, bool>> filter)
         {
-            var response = _wordRecords.FirstOrDefault(filter);
+            var response = _wordRecords
+                .FirstOrDefault(filter);
             return Task.FromResult(response);
         }
         public Task<IEnumerable<Word>> GetAll()
         {
             var records = _wordRecords.AsEnumerable();
             return Task.FromResult(records);
+        }
+
+        public Task<IEnumerable<Word>> GetAsync(Func<IQueryable<Word>, IQueryable<Word>> filter)
+        {
+            var response = filter(_wordRecords);
+            return Task.FromResult(response.AsEnumerable());
         }
     }
 

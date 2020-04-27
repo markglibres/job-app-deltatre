@@ -8,6 +8,10 @@ namespace DeltaTre.Search.Domain.Seedwork
     {
         public Guid Id { get; private set; }
         public IList<IEvent> Events { get; }
+        public void ClearEvents()
+        {
+            Events.Clear();
+        }
 
         protected Entity()
         {
@@ -21,6 +25,7 @@ namespace DeltaTre.Search.Domain.Seedwork
 
             Events.Add(@event);
         }
+
 
         
     }

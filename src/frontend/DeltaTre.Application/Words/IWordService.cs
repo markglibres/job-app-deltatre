@@ -7,5 +7,6 @@ namespace DeltaTre.Application.Words
     {
         Task<bool> Search(string value);
         Task<bool> Update(IEnumerable<string> values);
+        Task<IEnumerable<WordInfo>> GetTopSearched(int limit);
     }
 }

@@ -5,5 +5,6 @@ namespace DeltaTre.Search.Domain.Seedwork
     public interface IHasEvents
     {
         IList<IEvent> Events { get; }
+        void ClearEvents();
     }
 }

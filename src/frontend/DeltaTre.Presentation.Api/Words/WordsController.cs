@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using DeltaTre.Application.GetTopSearched;
 using DeltaTre.Application.UpdateWords;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +36,29 @@ namespace DeltaTre.Presentation.Api.Words
             return Ok(new UpdateRequestResponse
             {
                 Success = response.Success
+            });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetTopSearched()
+        {
+            var query = new GetTopSearchedQuery
+            {
+                Top = 5
+            };
+
+            var response = await _mediator.Send(query);
+
+            return Ok(new GetTopSearchedRequestResponse
+            {
+                Results = response
+                    .Results
+                    .ToList()
+                    .Select(r => new TopSearchedInfo
+                    {
+                        Count = r.Count,
+                        Value = r.Value
+                    })
             });
         }
     }
