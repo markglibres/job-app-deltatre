@@ -33,5 +33,6 @@ namespace DeltaTre.Search.Domain.Words
                 WordId = Id
             });
         }
+
     }
 }

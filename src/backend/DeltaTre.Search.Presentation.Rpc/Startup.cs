@@ -42,7 +42,7 @@ namespace DeltaTre.Search.Presentation.Rpc
                 return new InMemoryWordRepository(logger, initialData);
             });
             services.AddTransient<IDomainEventsService, MediatrEventsService>();
-            services.AddTransient<IWordService, WordService>();
+            services.AddTransient<IWordService, Domain.Words.WordService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +54,7 @@ namespace DeltaTre.Search.Presentation.Rpc
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<SearchService>();
+                endpoints.MapGrpcService<Services.WordService>();
 
                 endpoints.MapGet("/",
                     async context =>

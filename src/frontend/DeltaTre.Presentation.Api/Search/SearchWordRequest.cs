@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace DeltaTre.Presentation.Api.Words
+namespace DeltaTre.Presentation.Api.Search
 {
     public class SearchWordRequest
     {

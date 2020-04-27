@@ -24,10 +24,10 @@ namespace DeltaTre.Presentation.Api
             var grpcConfigSection = configuration.GetSection("GrpcConfig");
             services.Configure<GrpcConfig>(grpcConfigSection);
 
-            services.AddGrpcClient<Searcher.SearcherClient>(c =>
+            services.AddGrpcClient<WordService.WordServiceClient>(c =>
             {
                 var config = grpcConfigSection.Get<GrpcConfig>();
-                c.Address = new Uri(config.WordGrpcUrl);
+                c.Address = new Uri(config.Server);
             });
 
             services.ConfigureHealthCheck();

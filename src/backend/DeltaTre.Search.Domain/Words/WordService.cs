@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.GuardClauses;
 using DeltaTre.Search.Domain.Extensions;
 using DeltaTre.Search.Domain.Seedwork;
+using DeltaTre.Search.Domain.Words.Events;
 using DeltaTre.Search.Domain.Words.Seedwork;
 using Microsoft.Extensions.Logging;
 
@@ -59,6 +62,48 @@ namespace DeltaTre.Search.Domain.Words
             word.IncrementCount();
             await _wordRepository.SaveAsync(word);
 
+        }
+
+        public async Task Create(IEnumerable<string> words)
+        {
+            var tasks = new List<Task>();
+
+            words
+                .ToList()
+                .ForEach(w =>
+                    {
+                        _logger.LogInformation($"creating request for {w}");
+                        tasks.Add(
+                            _domainEventsService.Publish(
+                                new CreateWordRequestedEvent
+                                {
+                                    Id = Guid.NewGuid().ToString(),
+                                    Value = w
+                                },
+                                CancellationToken.None)
+                        );
+                    }
+                    );
+
+            await Task.WhenAll(tasks);
+        }
+
+        public async Task<Word> Create(string value)
+        {
+            var word = await _wordRepository
+                .GetByAsync(w => w.Value.Equals(value, StringComparison.OrdinalIgnoreCase));
+
+            if (word != null)
+            {
+                _logger.LogInformation($"Word {value} has not been created. Already exists.");
+                return word;
+            }
+
+            word = new Word(value);
+            await _wordRepository.InsertAsync(word);
+
+            _logger.LogInformation($"Word {value} has been created.");
+            return word;
         }
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace DeltaTre.Presentation.Api.Words
+namespace DeltaTre.Presentation.Api.Search
 {
     [Route("api/[controller]")]
     public class SearchController : Controller

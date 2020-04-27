@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Grpc\Protos\search.proto" GrpcServices="Client" />
+    <Protobuf Include="Grpc\Protos\wordservice.proto" GrpcServices="Client" />
   </ItemGroup>
 
   <ItemGroup>

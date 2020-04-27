@@ -12,13 +12,13 @@ namespace DelaTre.Infrastructure.Tests.Grpc
         protected GivenWordService()
         {
             Fixture = new Fixture().Customize(new AutoMoqCustomization());
-            MockSearcherClient = Fixture.FreezeMoq<Searcher.SearcherClient>();
+            MockWordServiceClient = Fixture.FreezeMoq<WordService.WordServiceClient>();
 
             WordService = Fixture.Create<GrpcWordService>();
         }
 
         protected IFixture Fixture { get; }
-        protected Mock<Searcher.SearcherClient> MockSearcherClient { get; }
+        protected Mock<WordService.WordServiceClient> MockWordServiceClient { get; }
         protected GrpcWordService WordService { get; }
     }
 }

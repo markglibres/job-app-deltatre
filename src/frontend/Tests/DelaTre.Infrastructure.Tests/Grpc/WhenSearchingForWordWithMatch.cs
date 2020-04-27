@@ -11,7 +11,7 @@ namespace DelaTre.Infrastructure.Tests.Grpc
     {
         public WhenSearchingForWordWithMatch()
         {
-            MockSearcherClient.Setup(c =>
+            MockWordServiceClient.Setup(c =>
                     c.FindAsync(
                         It.IsAny<SearchRequest>(),
                         null, null, default))

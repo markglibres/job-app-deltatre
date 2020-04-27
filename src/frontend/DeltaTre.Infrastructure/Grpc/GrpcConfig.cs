@@ -2,6 +2,6 @@
 {
     public class GrpcConfig
     {
-        public string WordGrpcUrl { get; set; }
+        public string Server { get; set; }
     }
 }

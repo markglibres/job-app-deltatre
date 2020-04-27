@@ -2,10 +2,11 @@ syntax = "proto3";
 
 option csharp_namespace = "DeltaTre.Search.Presentation.Rpc";
 
-package search;
+package wordservice;
 
-service Searcher {
+service WordService {
 	rpc Find(SearchRequest) returns (SearchResponse);
+	rpc Update(UpdateRequest) returns (UpdateResponse);
 }
 
 message SearchRequest {
@@ -15,4 +16,12 @@ message SearchRequest {
 message SearchResponse {
 	string word = 1;
 	bool found = 2;
+}
+
+message UpdateRequest {
+	repeated string word = 1;
+}
+
+message UpdateResponse {
+	bool success = 1;
 }
