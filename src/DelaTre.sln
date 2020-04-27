@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaTre.Domain", "frontend\DeltaTre.Domain\DeltaTre.Domain.csproj", "{4E42C904-CA79-48B4-A117-E81B329C75C1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaTre.Application", "frontend\DeltaTre.Application\DeltaTre.Application.csproj", "{119EFC93-F1F4-4335-B410-300CF4EB241A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaTre.Presentation.Api", "frontend\DeltaTre.Presentation.Api\DeltaTre.Presentation.Api.csproj", "{604F2596-32C1-4425-A754-6010B98203F4}"
@@ -39,9 +37,9 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C482439C-F244-4CA0-A47B-2D0C0740A2EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelaTre.Infrastructure.Tests", "frontend\Tests\DelaTre.Infrastructure.Tests\DelaTre.Infrastructure.Tests.csproj", "{D9942150-A17D-483B-954D-2F92E06C6F55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelaTre.Infrastructure.Tests", "frontend\Tests\DelaTre.Infrastructure.Tests\DelaTre.Infrastructure.Tests.csproj", "{D9942150-A17D-483B-954D-2F92E06C6F55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeltaTre.Tests.Common", "frontend\Tests\DeltaTre.Tests.Common\DeltaTre.Tests.Common.csproj", "{5C44C53D-0D0A-4D7F-838D-3516AC6F686A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeltaTre.Tests.Common", "frontend\Tests\DeltaTre.Tests.Common\DeltaTre.Tests.Common.csproj", "{5C44C53D-0D0A-4D7F-838D-3516AC6F686A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +47,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4E42C904-CA79-48B4-A117-E81B329C75C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E42C904-CA79-48B4-A117-E81B329C75C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E42C904-CA79-48B4-A117-E81B329C75C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E42C904-CA79-48B4-A117-E81B329C75C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{119EFC93-F1F4-4335-B410-300CF4EB241A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{119EFC93-F1F4-4335-B410-300CF4EB241A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119EFC93-F1F4-4335-B410-300CF4EB241A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -114,7 +108,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{4E42C904-CA79-48B4-A117-E81B329C75C1} = {5B441812-2E59-41FC-8835-7760004C6C5B}
 		{119EFC93-F1F4-4335-B410-300CF4EB241A} = {5B441812-2E59-41FC-8835-7760004C6C5B}
 		{604F2596-32C1-4425-A754-6010B98203F4} = {5B441812-2E59-41FC-8835-7760004C6C5B}
 		{DF00258C-95CB-4205-B512-36765E5FD8D0} = {5B441812-2E59-41FC-8835-7760004C6C5B}

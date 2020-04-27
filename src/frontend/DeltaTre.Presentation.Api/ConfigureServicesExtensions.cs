@@ -1,13 +1,7 @@
 ﻿using System;
-using DeltaTre.Application.CreateContact;
-using DeltaTre.Application.Seedwork;
+using DeltaTre.Application.Search;
 using DeltaTre.Application.Words;
-using DeltaTre.Domain.Contacts;
-using DeltaTre.Domain.Contacts.Seedwork;
-using DeltaTre.Domain.Seedwork;
-using DeltaTre.Infrastructure.EventBus;
 using DeltaTre.Infrastructure.Grpc;
-using DeltaTre.Infrastructure.Repositories;
 using DeltaTre.Search.Presentation.Rpc;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DeltaTre.Presentation.Api
 {
-    public static class ConfigureHealthCheckExtension
+    public static class ConfigureServicesExtensions
     {
         public static IServiceCollection ConfigureServices(
             this IServiceCollection services,
@@ -31,12 +25,7 @@ namespace DeltaTre.Presentation.Api
             });
 
             services.ConfigureHealthCheck();
-            services.AddMediatR(typeof(CreateContactCommandHandler).Assembly);
-
-            services.AddTransient<IDomainEventsService, MediatrEventsService>();
-            services.AddTransient<IContactService, ContactService>();
-            services.AddTransient<IContactRepository, InMemoryContactRepository>();
-            services.AddTransient<IIntegrationEventPublisherService, AzureServiceBusPublisherService>();
+            services.AddMediatR(typeof(SearchWordQuery).Assembly);
             services.AddTransient<IWordService, GrpcWordService>();
 
             return services;

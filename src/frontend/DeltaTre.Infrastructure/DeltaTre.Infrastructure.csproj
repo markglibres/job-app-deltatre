@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DeltaTre.Application\DeltaTre.Application.csproj" />
-    <ProjectReference Include="..\DeltaTre.Domain\DeltaTre.Domain.csproj" />
   </ItemGroup>
 
 </Project>
