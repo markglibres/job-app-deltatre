@@ -9,13 +9,7 @@ RUN dotnet restore "DeltaTre.Search.Presentation.Rpc/DeltaTre.Search.Presentatio
 
 COPY . .
 
-#TODO: use ls or find test projects and execute with xargs
-#WORKDIR "/src/Tests/DeltaTre.Search.Domain.Tests"
-#RUN dotnet test
-#WORKDIR "/src/Tests/DeltaTre.Search.Application.Tests"
-#RUN dotnet test
-#WORKDIR "/src/Tests/DeltaTre.Search.Infrastructure.Tests"
-#RUN dotnet test
+RUN find . -type d -name "*.Tests" -print0 | xargs -0 -L1 sh -c 'dotnet test "$0"'
 
 WORKDIR "/src/DeltaTre.Search.Presentation.Rpc"
 RUN dotnet build "DeltaTre.Search.Presentation.Rpc.csproj" -c Release -o /app/build
