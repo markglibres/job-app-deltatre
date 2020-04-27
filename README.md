@@ -2,9 +2,10 @@ A simple microservice project with API as the front-end service and a gRPC appli
 
 **Patterns / Tech used:**
  - multi-tier / onion architecture
+ - event-driven design
  - service layer pattern
  - inversion of control (IoC, DI)
- - CQRS
+ - CQRS (partially)
  - mediator pattern
  - repository pattern
  - DDD, TDD
