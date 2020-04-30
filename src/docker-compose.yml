@@ -3,6 +3,7 @@ version: '3.4'
 services:
   deltaTre.search.presentation.rpc:
     image: ${DOCKER_REGISTRY-}deltatre.grpc
+    hostname: deltaTre.search.presentation.rpc
     build:
       context: ./backend
       dockerfile: DeltaTre.Search.Presentation.Rpc/Dockerfile
@@ -13,6 +14,7 @@ services:
 
   deltaTre.presentation.api:
     image: ${DOCKER_REGISTRY-}deltatre.api
+    hostname: deltaTre.presentation.api
     build:
       context: ./frontend
       dockerfile: DeltaTre.Presentation.Api/Dockerfile

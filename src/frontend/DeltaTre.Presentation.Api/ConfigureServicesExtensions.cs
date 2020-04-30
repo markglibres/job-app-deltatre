@@ -24,6 +24,9 @@ namespace DeltaTre.Presentation.Api
                 c.Address = new Uri(config.Server);
             });
 
+            // see: https://github.com/grpc/grpc-dotnet/issues/626
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+
             services.ConfigureHealthCheck();
             services.AddMediatR(typeof(SearchWordQuery).Assembly);
             services.AddTransient<IWordService, GrpcWordService>();
